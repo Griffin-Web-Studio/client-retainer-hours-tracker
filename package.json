@@ -20,5 +20,5 @@
     "concurrently": "^9.2.1",
     "esbuild": "^0.28.0"
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@10.34.5"
 }
