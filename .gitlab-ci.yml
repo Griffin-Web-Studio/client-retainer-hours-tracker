@@ -144,7 +144,7 @@ check:nightly:
 # development. No coverage gate yet - tracker/tests.py is still a stub.
 test:
   stage: test
-  image: python:3.14-slim
+  image: python:3.15-slim
   needs:
     - job: check:nightly
       optional: true # doesn't exist outside scheduled pipelines
