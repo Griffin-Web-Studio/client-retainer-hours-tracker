@@ -7,7 +7,7 @@
 # image-build time - collectstatic below needs both to already exist, or it
 # raises "Missing staticfiles manifest entry" at runtime for whichever one
 # is missing.
-FROM node:22-slim AS static-builder
+FROM node:26-slim AS static-builder
 
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 WORKDIR /app
