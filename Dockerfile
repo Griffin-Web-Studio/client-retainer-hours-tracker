@@ -27,7 +27,7 @@ COPY esbuild.config.mjs tsconfig.json ./
 RUN pnpm build
 
 # ───────────────────────────────────────────────| Python dependencies stage |──
-FROM python:3.14-slim AS python-builder
+FROM python:3.15-slim AS python-builder
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
@@ -56,7 +56,7 @@ ENV SECRET_KEY=build-time-only-unused-at-runtime \
 RUN /app/.venv/bin/python manage.py collectstatic --noinput
 
 # ─────────────────────────────────────────────────────────────────| Runtime |──
-FROM python:3.14-slim AS runtime
+FROM python:3.15-slim AS runtime
 
 # WeasyPrint (PDF report generation) needs these system libraries, not
 # part of the base image - only required here (not python-builder):
